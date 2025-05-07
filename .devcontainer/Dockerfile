@@ -12,9 +12,16 @@ RUN java -version
 # Set up working directory
 WORKDIR /workspace
 
-# Install pip requirements (if requirements.txt exists)
+# Install pip requirements
 COPY requirements.txt /workspace/requirements.txt
 RUN pip install -r requirements.txt
+
+# Clone and build Synthea
+RUN mkdir -p app/services/medical && \
+    cd app/services/medical && \
+    git clone https://github.com/synthetichealth/synthea.git && \
+    cd synthea && \
+    ./gradlew build -x test
 
 # Keep container running for development
 CMD ["sleep", "infinity"]

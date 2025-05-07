@@ -6,11 +6,16 @@ services:
       dockerfile: .devcontainer/Dockerfile
     volumes:
       - ..:/workspace
+      - synthea_output:/workspace/app/services/medical/synthea/output
     environment:
       - PYTHONUNBUFFERED=1
       - JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
     ports:
       - "5000:5000"  # For Flask API
       - "3000:3000"  # For React frontend
+      - "8000:8000"  # For FastAPI
     working_dir: /workspace
     command: sleep infinity  # Keep container running
+
+volumes:
+  synthea_output:  # Persistent volume for Synthea output
