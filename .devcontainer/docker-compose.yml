@@ -6,7 +6,6 @@ services:
       dockerfile: .devcontainer/Dockerfile
     volumes:
       - ..:/workspace
-      - synthea-data:/workspace/synthea/output
     environment:
       - PYTHONUNBUFFERED=1
       - JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
@@ -15,6 +14,3 @@ services:
       - "3000:3000"  # For React frontend
     working_dir: /workspace
     command: sleep infinity  # Keep container running
-
-volumes:
-  synthea-data:

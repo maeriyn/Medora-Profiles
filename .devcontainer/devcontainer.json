@@ -16,6 +16,5 @@
             ]
         }
     },
-    "forwardPorts": [5000, 3000],
-    "postCreateCommand": "git clone https://github.com/synthetichealth/synthea.git || true"
+    "forwardPorts": [5000, 3000]
 }
