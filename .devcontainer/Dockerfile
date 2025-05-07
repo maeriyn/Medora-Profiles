@@ -1,13 +1,26 @@
 FROM python:3.11-slim
 
-# Install Java 11 and other dependencies
+# Install system dependencies
 RUN apt-get update && \
-    apt-get install -y default-jdk wget git && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get install -y \
+    default-jdk \
+    wget \
+    git \
+    curl \
+    gnupg \
+    build-essential \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Verify Java installation
-RUN java -version
+# Install Node.js and npm
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && npm install -g npm@latest
+
+# Verify installations
+RUN java -version && \
+    node --version && \
+    npm --version
 
 # Set up working directory
 WORKDIR /workspace
@@ -15,6 +28,14 @@ WORKDIR /workspace
 # Install pip requirements
 COPY requirements.txt /workspace/requirements.txt
 RUN pip install -r requirements.txt
+
+# Install frontend dependencies
+COPY frontend/package*.json /workspace/frontend/
+WORKDIR /workspace/frontend
+RUN npm install
+
+# Return to main workspace
+WORKDIR /workspace
 
 # Clone and build Synthea
 RUN mkdir -p app/services/medical && \
