@@ -9,7 +9,7 @@ class MedicalGeneratorConfig(GeneratorConfig):
     """Configuration specific to medical data generation"""
     state: str = "Massachusetts"
     gender: str = None
-    age_min: int = None
+    age_min: int = 8
     age_max: int = None
     modules: list[str] = None
 
