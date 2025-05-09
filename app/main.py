@@ -9,7 +9,10 @@ from app.services.medical.synthea_generator import SyntheaGenerator, MedicalGene
 app = FastAPI(
     title=settings.APP_NAME,
     openapi_url=f"{settings.API_V1_PREFIX}/openapi.json",
-    docs_url=f"{settings.API_V1_PREFIX}/docs"
+    docs_url=f"{settings.API_V1_PREFIX}/docs",
+    redoc_url=f"{settings.API_V1_PREFIX}/redoc",
+    description="API for generating synthetic medical records using Synthea",
+    version="1.0.0"
 )
 
 # Register available generators
