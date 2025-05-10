@@ -3,11 +3,20 @@
   --beige: #EAE0C8;
   --white: #FFFFFF;
   --gray: #A9A9A9;
-  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.18);
   --glass-shadow: rgba(31, 38, 135, 0.37);
   --neumorph-shadow-light: rgba(255, 255, 255, 0.1);
   --neumorph-shadow-dark: rgba(0, 0, 0, 0.2);
+  --color-bg: #000000;
+  --color-text: #ffffff;
+  --color-gray: #808080;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  filter: grayscale(100%);
 }
 
 #root {
