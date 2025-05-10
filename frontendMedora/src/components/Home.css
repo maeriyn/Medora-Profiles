@@ -26,12 +26,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;  /* reduced from 2.5rem */
+  gap: 1rem;
   font-size: clamp(2rem, 4vw, 4rem);
   font-weight: 700;
   color: white;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0;  /* Remove padding to ensure uniform spacing */
+}
+
+.cycling-text {
+  position: relative;
+  min-width: var(--cycling-width, auto);
+  height: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;  /* Align to start to match spacing */
+  margin: 0;
+  padding: 0;
+}
+
+.cycling-word {
+  position: absolute;
+  opacity: 0;
+  animation: fadeInOut 3s ease-in-out;
+  margin: 0;
+  padding: 0;
+  left: 0;  /* Align to the left to match spacing */
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; transform: translateY(10px); }
+  20%, 80% { opacity: 1; transform: translateY(0); }
 }
 
 .subtitle {
