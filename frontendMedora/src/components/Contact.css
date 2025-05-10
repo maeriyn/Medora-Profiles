@@ -14,16 +14,20 @@
 .contact-text {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #EAE0C8;
+  color: #FFFFFF;  /* Changed from #EAE0C8 to white */
   margin-bottom: 2rem;
 }
 
 .contact-info {
-  color: #EAE0C8;
+  color: #FFFFFF;  /* Changed from #EAE0C8 to white */
   font-size: 1.1rem;
   line-height: 1.5;
 }
 
 .contact-info p {
   margin: 0.5rem 0;
+}
+
+.contact .title {
+  color: #FFFFFF;
 }

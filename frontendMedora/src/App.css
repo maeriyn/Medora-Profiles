@@ -16,7 +16,6 @@
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  filter: grayscale(100%);
 }
 
 #root {

@@ -14,6 +14,10 @@
 .bio-text {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #EAE0C8;
+  color: #FFFFFF;  /* Changed from #EAE0C8 to white */
   text-align: justify;
+}
+
+.biography .title {
+  color: #FFFFFF;
 }

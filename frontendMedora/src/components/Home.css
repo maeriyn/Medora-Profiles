@@ -61,7 +61,7 @@
 
 .subtitle {
   font-size: 1.5rem;
-  color: #808080;
+  color: #FFFFFF;
   margin-top: 2rem;
 }
 
@@ -75,6 +75,7 @@
   overflow: hidden;
   padding: 4rem 2rem;
   background: rgba(0, 0, 0, 0.8);
+  perspective: 1000px; /* Added perspective for enhanced parallax */
 }
 
 .section-content {
@@ -107,13 +108,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.6) grayscale(100%); /* Add grayscale filter */
+  filter: brightness(0.6) drop-shadow(0 0 10px #1E90FF33);
   opacity: 0.5;
   will-change: transform;
+  transition: transform 0.1s linear; /* Smoother parallax transition */
+  transform-style: preserve-3d; /* Enhanced 3D effect */
 }
 
 .section-image.color {
-  filter: brightness(0.6); /* Remove grayscale for color images */
+  filter: brightness(0.6) drop-shadow(0 0 15px #1E90FF40);
 }
 
 .parallax {

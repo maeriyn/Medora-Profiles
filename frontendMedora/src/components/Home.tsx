@@ -7,25 +7,25 @@ const sections = [
     title: 'Healthcare Documents',
     description: 'Generate comprehensive medical records, including patient histories, diagnoses, treatments, and lab results that maintain statistical accuracy while ensuring complete privacy.',
     image: '/images/healthcare.jpg',
-    parallaxRange: [-50, 50] // Controls parallax intensity
+    parallaxRange: [-150, 150] // Increased from [-50, 50]
   },
   {
     title: 'Financial Documents',
     description: 'Create realistic financial profiles including tax returns, bank statements, and investment portfolios that reflect real-world economic patterns and regulations.',
     image: '/images/financial.jpg',
-    parallaxRange: [-30, 30]
+    parallaxRange: [-100, 100] // Increased from [-30, 30]
   },
   {
     title: 'Educational Documents',
     description: 'Produce academic records, transcripts, and educational assessments that mirror actual educational institutions while preserving anonymity.',
     image: '/images/education.jpg',
-    parallaxRange: [-40, 40]
+    parallaxRange: [-120, 120] // Increased from [-40, 40]
   },
   {
     title: 'Legal Documents',
     description: 'Generate legal documentation including contracts, court records, and regulatory filings that maintain legal validity while protecting sensitive information.',
     image: '/images/legal.jpg',
-    parallaxRange: [-20, 20]
+    parallaxRange: [-80, 80] // Increased from [-20, 20]
   }
 ]
 
@@ -101,7 +101,9 @@ export default function Home() {
             <div className="cycling-text" ref={cyclingTextRef}>
               <span
                 className="cycling-word"
-                ref={el => (wordRefs.current[currentWord] = el)}
+                ref={el => {
+                  wordRefs.current[currentWord] = el;
+                }}
                 key={cyclingWords[currentWord]}
               >
                 {cyclingWords[currentWord]}
