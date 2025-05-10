@@ -1,0 +1,19 @@
+.biography {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.bio-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bio-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #EAE0C8;
+  text-align: justify;
+}
