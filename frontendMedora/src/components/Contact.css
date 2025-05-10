@@ -1,0 +1,29 @@
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #EAE0C8;
+  margin-bottom: 2rem;
+}
+
+.contact-info {
+  color: #EAE0C8;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+}
