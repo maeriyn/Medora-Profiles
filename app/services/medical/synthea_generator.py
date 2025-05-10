@@ -56,8 +56,11 @@ class SyntheaGenerator(BaseGenerator):
         cmd.extend(["--exporter.fhir.export", "true"])
         cmd.extend(["--exporter.json.export", "true"])
                 
-        # Run Synthea
+        # Run Synthea with more detailed error handling
         try:
+            print(f"Executing command: {' '.join(cmd)}")
+            print(f"Working directory: {self.synthea_path}")
+            
             process = subprocess.run(
                 cmd,
                 stdout=subprocess.PIPE,
@@ -67,14 +70,28 @@ class SyntheaGenerator(BaseGenerator):
                 check=True
             )
             
+            # Log the output
+            if process.stdout:
+                print("Stdout:", process.stdout)
+            if process.stderr:
+                print("Stderr:", process.stderr)
+            
             # Process and return the generated data
             output_dir = os.path.join(self.synthea_path, "output")
             return self._process_output(output_dir, config.output_format)
             
         except subprocess.CalledProcessError as e:
-            raise RuntimeError(f"Synthea generation failed: {e.stderr}")
+            error_msg = f"""
+            Synthea generation failed:
+            Command: {' '.join(cmd)}
+            Return code: {e.returncode}
+            Stdout: {e.stdout}
+            Stderr: {e.stderr}
+            Working directory: {self.synthea_path}
+            """
+            raise RuntimeError(error_msg)
         except Exception as e:
-            raise RuntimeError(f"Failed to generate medical data: {str(e)}")
+            raise RuntimeError(f"Failed to generate medical data: {str(e)}\nCommand was: {' '.join(cmd)}")
     
     def validate(self, data: Dict[str, Any]) -> bool:
         """Validate the generated medical data"""

@@ -91,10 +91,6 @@ if __name__ == "__main__":
     print("  - GET /api/v1/status") 
     print("  - POST /api/v1/generate")
     print("  - GET /api/v1/redoc (Redoc UI)")
-
-    # NOTE: To access /api/v1/redoc, run this file directly:
-    #   python api.py
-    # If you use 'uvicorn app.main:app', make sure redoc_url is set in that app.
     
     uvicorn.run(
         app,
