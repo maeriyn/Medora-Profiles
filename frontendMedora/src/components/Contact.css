@@ -4,6 +4,7 @@
   justify-content: center;
   min-height: 100vh;
   padding: 2rem;
+  background: transparent;  /* Remove background to show app gradient */
 }
 
 .contact-content {

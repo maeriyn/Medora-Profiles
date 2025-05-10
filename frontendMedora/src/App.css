@@ -11,10 +11,16 @@
   --color-bg: #000000;
   --color-text: #ffffff;
   --color-gray: #808080;
+  --gradient-primary: linear-gradient(135deg, #1E90FF 0%, #00BFFF 100%);
+  --gradient-background: linear-gradient(90deg, #000000 0%, #1a1a2e 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 
 body {
-  background-color: var(--color-bg);
+  margin: 0;
+  padding: 0;
+  background: var(--gradient-background);
+  min-height: 100vh;
   color: var(--color-text);
 }
 
@@ -72,18 +78,17 @@ body {
   position: relative;
   z-index: 1;
   padding: 2rem;
-  background: var(--glass-bg);
+  background: transparent;
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  box-shadow: 
-    8px 8px 16px var(--neumorph-shadow-dark),
-    -8px -8px 16px var(--neumorph-shadow-light);
-  border: 1px solid var(--glass-border);
+  border: none;
+  box-shadow: none;
   transition: transform 0.3s ease;
 }
 
 .content-wrapper:hover {
-  transform: translateY(-5px);
+  transform: none;
+  box-shadow: none;
 }
 
 .back-button {
@@ -91,7 +96,7 @@ body {
   bottom: 2rem;
   left: 2rem;
   padding: 0.5rem 1rem;
-  background: var(--glass-bg);
+  background: var(--gradient-glass);
   backdrop-filter: blur(5px);
   color: var(--navy);
   border: none;

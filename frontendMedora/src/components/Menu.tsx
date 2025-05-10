@@ -82,7 +82,7 @@ export default function Menu() {
     if (!isExpanded) {
       // Focus the input when expanding
       setTimeout(() => {
-        document.querySelector('.search-input')?.focus();
+        (document.querySelector('.search-input') as HTMLInputElement)?.focus();
       }, 100);
     }
   };
