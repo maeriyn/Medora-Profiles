@@ -42,6 +42,47 @@
   transform-origin: bottom left;
 }
 
+.menu-item {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 0;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: var(--overlay-dark);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 0.5rem;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.dropdown a:hover {
+  background: rgba(30, 144, 255, 0.1);
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;

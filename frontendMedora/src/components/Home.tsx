@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import './Home.css'
 
 const sections = [
@@ -55,6 +56,7 @@ const features = [
 ]
 
 export default function Home() {
+  const navigate = useNavigate();
   const cyclingWords = [
     'Towns',
     'Cities',
@@ -105,6 +107,12 @@ export default function Home() {
     }
   }, [currentWord])
 
+  const handleSectionClick = (title: string) => {
+    // Convert "Healthcare Documents" to "healthcare"
+    const path = title.split(' ')[0].toLowerCase();
+    navigate(`/modalities/${path}`);
+  };
+
   return (
     <div className="parallax-container">
       <motion.div 
@@ -136,7 +144,7 @@ export default function Home() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Get Started Free
+            Generate Now
           </motion.button>
 
           {/* Metrics container with fixed width wrapper */}
@@ -185,22 +193,28 @@ export default function Home() {
         ))}
       </div>
 
-      {sections.map((section) => (
-        <div key={section.title} className="section">
-          <img 
-            src={section.image} 
-            alt={section.title}
-            className="section-image"
-            style={{
-              filter: 'brightness(0.7) contrast(1.05)'
-            }}
-          />
-          <div className="section-content">
-            <h2 className="section-title">{section.title}</h2>
-            <p className="section-description">{section.description}</p>
+      {sections.map((section) => {
+        return (
+          <div key={section.title} className="section">
+            <img 
+              src={section.image} 
+              alt={section.title}
+              className="section-image clickable"
+              style={{
+                filter: 'brightness(0.7) contrast(1.05)'
+              }}
+              onClick={() => handleSectionClick(section.title)}
+            />
+            <div 
+              className="section-content clickable"
+              onClick={() => handleSectionClick(section.title)}
+            >
+              <h2 className="section-title">{section.title}</h2>
+              <p className="section-description">{section.description}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   )
 }
