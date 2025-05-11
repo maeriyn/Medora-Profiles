@@ -12,14 +12,16 @@
   --color-text: #ffffff;
   --color-gray: #808080;
   --gradient-primary: linear-gradient(135deg, #1E90FF 0%, #00BFFF 100%);
-  --gradient-background: linear-gradient(90deg, #000000 0%, #1a1a2e 100%);
+  --gradient-background: linear-gradient(135deg, #000510 0%, #001933 100%);
   --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  --overlay-dark: rgba(0, 5, 16, 0.75);
 }
 
 body {
   margin: 0;
   padding: 0;
   background: var(--gradient-background);
+  background-attachment: fixed;
   min-height: 100vh;
   color: var(--color-text);
 }
@@ -72,6 +74,8 @@ body {
   position: relative;
   perspective: 1000px;
   transform-style: preserve-3d;
+  background: var(--gradient-background);
+  background-attachment: fixed;
 }
 
 .content-wrapper {

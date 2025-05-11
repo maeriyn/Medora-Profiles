@@ -131,9 +131,7 @@
   align-items: center;
   gap: 4rem;
   padding: 2rem 8%;
-  background: rgba(0, 0, 0, 0.8);
-  backface-visibility: hidden;
-  transition: opacity 0.8s ease-out;
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
@@ -164,9 +162,11 @@
   width: 100%;
   max-width: 600px;
   padding: 3rem;
-  background: rgba(0, 0, 0, 0.85);
+  background: var(--overlay-dark);
+  backdrop-filter: blur(10px);
   border-radius: 24px;
   text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .section-title {
@@ -404,10 +404,10 @@
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background: rgba(30, 144, 255, 0.1);
+  background: var(--overlay-dark);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(30, 144, 255, 0.2);
   border-radius: 15px;
-  backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-sizing: border-box; /* Ensure padding is included in dimensions */
 }
@@ -450,10 +450,10 @@
 .feature-card {
   padding: 1.75rem;
   margin: 0;
-  background: var(--gradient-glass);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--overlay-dark);
   backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
   max-width: 350px;
