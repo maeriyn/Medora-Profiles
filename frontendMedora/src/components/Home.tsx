@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import './Home.css'
 
 const sections = [
@@ -108,15 +108,55 @@ export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end start"]
+    offset: ["start start", "end end"]
   })
 
+  // Smoother scroll progress with optimized spring settings
+  const smoothProgress = useSpring(scrollYProgress, {
+    damping: 30, // Increased damping for more controlled movement
+    mass: 0.8,   // Increased mass for smoother transitions
+    stiffness: 30 // Reduced stiffness for better flow
+  })
+
+  // Calculate section visibility based on viewport position
+  const calculateSectionProgress = (index: number) => {
+    // Each section takes up 1/sections.length of the total scroll range
+    const sectionSize = 1 / sections.length
+    // Start showing section slightly before it reaches viewport
+    const start = Math.max(0, (index * sectionSize) - 0.1)
+    // Keep section visible until next section starts
+    const end = Math.min(1, ((index + 1) * sectionSize) + 0.1)
+    return useTransform(smoothProgress, [start, start + 0.2, end - 0.2, end], [0, 1, 1, 0])
+  }
+
+  // Calculate parallax effect based on scroll position
+  const calculateParallax = (index: number, range: number[]) => {
+    const sectionSize = 1 / sections.length
+    const sectionStart = index * sectionSize
+    const sectionEnd = (index + 1) * sectionSize
+    return useTransform(
+      smoothProgress,
+      [sectionStart, sectionEnd],
+      range,
+      { clamp: false } // Allow smooth overflow for parallax
+    )
+  }
+
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} className="parallax-container">
       <motion.div 
         className="home"
         style={{
-          opacity: useTransform(scrollYProgress, [0, 0.5], [1, 0]) // Changed from [0, 0.3] to [0, 0.5]
+          opacity: useTransform(
+            smoothProgress, 
+            [0, 0.15, 0.3], 
+            [1, 1, 0]
+          ),
+          scale: useTransform(
+            smoothProgress,
+            [0, 0.3],
+            [1, 0.95]
+          )
         }}
       >
         <div className="content-wrapper">
@@ -195,77 +235,53 @@ export default function Home() {
       </div>
 
       {sections.map((section, index) => {
-        // Create custom intersection observer options
-        const viewportOptions = {
-          once: false,
-          margin: "-20% 0px -20% 0px", // Trigger slightly before element enters viewport
-          amount: 0.4 // Trigger when 40% of element is visible
-        }
-
-        // Custom easing function for smoother transitions 
-        const easing = [0.645, 0.045, 0.355, 1.000] // Cubic bezier for smooth motion
+        const visibility = calculateSectionProgress(index)
+        const yParallax = calculateParallax(index, section.parallaxRange)
 
         return (
           <motion.div 
             key={section.title}
             className="section"
-            initial="hidden"
-            whileInView="visible"
-            exit="hidden"
-            viewport={viewportOptions}
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { 
-                opacity: 1, 
-                y: 0,
-                transition: {
-                  duration: 0.8,
-                  ease: easing,
-                  delay: index * 0.2 // Stagger sections
-                }
-              }
+            style={{
+              opacity: visibility,
+              // Ensure section is in view before starting parallax
+              y: useTransform(
+                smoothProgress,
+                [(index / sections.length), ((index + 1) / sections.length)],
+                [0, -50]
+              )
             }}
           >
-            <motion.img 
-              src={section.image} 
-              alt={section.title}
-              className={`section-image ${index === 0 ? 'color' : ''}`}
-              variants={{
-                hidden: { 
-                  scale: 1.2,
-                  y: section.parallaxRange[0]
-                },
-                visible: {
-                  scale: 1,
-                  y: section.parallaxRange[1],
-                  transition: {
-                    duration: 1.2,
-                    ease: easing,
-                    delay: index * 0.15
-                  }
-                }
-              }}
-            />
             <motion.div 
-              className="section-content"
-              variants={{
-                hidden: { 
-                  opacity: 0, 
-                  y: 30
-                },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 0.6,
-                    ease: easing,
-                    delay: 0.2 + (index * 0.1)
-                  }
-                }
+              className="parallax-layer background"
+              style={{ y: yParallax }}
+            >
+              <motion.img 
+                src={section.image} 
+                alt={section.title}
+                className={`section-image ${index === 0 ? 'color' : ''}`}
+                style={{
+                  scale: useTransform(visibility, [0, 1], [1.1, 1])
+                }}
+              />
+            </motion.div>
+
+            <motion.div 
+              className="parallax-layer content"
+              style={{
+                y: useTransform(yParallax, (y) => y * -0.5), // Inverse parallax for content
               }}
             >
-              <h2 className="section-title">{section.title}</h2>
-              <p className="section-description">{section.description}</p>
+              <motion.div 
+                className="section-content"
+                style={{
+                  opacity: visibility,
+                  y: useTransform(visibility, [0, 1], [30, 0])
+                }}
+              >
+                <h2 className="section-title">{section.title}</h2>
+                <p className="section-description">{section.description}</p>
+              </motion.div>
             </motion.div>
           </motion.div>
         )
