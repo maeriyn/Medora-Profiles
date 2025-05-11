@@ -76,6 +76,37 @@ body {
   transform-style: preserve-3d;
   background: var(--gradient-background);
   background-attachment: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.page-container {
+  position: relative;
+  transform-style: preserve-3d;
+  width: 100%;
+  min-height: 100vh;
+  perspective: 2px;
+  z-index: 1;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.parallax-back {
+  transform: translateZ(-1px) scale(1.5);
+}
+
+.parallax-base {
+  transform: translateZ(0);
+}
+
+.parallax-front {
+  transform: translateZ(1px) scale(0.5);
 }
 
 .content-wrapper {

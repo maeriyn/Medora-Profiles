@@ -13,12 +13,35 @@ function App() {
       <div className="app">
         <Menu />
         <AnimatePresence mode="wait">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/biography" element={<Biography />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/search" element={<NoResults />} />
-          </Routes>
+          <div className="page-container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route 
+                path="/biography" 
+                element={
+                  <div className="parallax-container">
+                    <Biography />
+                  </div>
+                } 
+              />
+              <Route 
+                path="/contact" 
+                element={
+                  <div className="parallax-container">
+                    <Contact />
+                  </div>
+                } 
+              />
+              <Route 
+                path="/search" 
+                element={
+                  <div className="parallax-container">
+                    <NoResults />
+                  </div>
+                } 
+              />
+            </Routes>
+          </div>
         </AnimatePresence>
       </div>
     </Router>
