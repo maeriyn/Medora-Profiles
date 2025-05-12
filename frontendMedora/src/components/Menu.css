@@ -3,8 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(10px);
+  background: transparent;
   z-index: 1000;
 }
 
@@ -31,13 +30,124 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #FFFFFF;
+  background-color: #1E90FF;
+  box-shadow: 0 0 8px #1E90FF;
   transform: scaleX(0);
   transform-origin: bottom right;
-  transition: transform 0.3s ease;
+  transition: transform 0.15s ease;
 }
 
 .menu a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.menu-item {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 0;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: var(--overlay-dark);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 0.5rem;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.dropdown a:hover {
+  background: rgba(30, 144, 255, 0.1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.metric-item {
+  width: 220px;
+  height: 140px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(30, 144, 255, 0.1);
+  border: 1px solid rgba(30, 144, 255, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 0.75rem; /* Fixed spacing between value and label */
+}
+
+.metric-value {
+  height: 2.5rem; /* Fixed height for value */
+  line-height: 2.5rem; /* Match height for vertical centering */
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.metric-label {
+  height: 1.5rem; /* Fixed height for label */
+  line-height: 1.5rem; /* Match height for vertical centering */
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+  width: 100%; /* Ensure full width */
+}
+
+@media (max-width: 768px) {
+  .metrics-container {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .metric-box {
+    width: calc(50% - 1rem);
+    padding: 0.75rem 1rem;
+  }
+  
+  .metric-item {
+    width: calc(50% - 1rem);
+    height: 120px; /* Slightly smaller height on mobile */
+    min-width: 160px; /* Smaller minimum width on mobile */
+  }
 }

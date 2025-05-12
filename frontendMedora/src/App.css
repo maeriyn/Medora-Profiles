@@ -11,12 +11,19 @@
   --color-bg: #000000;
   --color-text: #ffffff;
   --color-gray: #808080;
+  --gradient-primary: linear-gradient(135deg, #1E90FF 0%, #00BFFF 100%);
+  --gradient-background: linear-gradient(135deg, #000510 0%, #001933 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  --overlay-dark: rgba(0, 5, 16, 0.75);
 }
 
 body {
-  background-color: var(--color-bg);
+  margin: 0;
+  padding: 0;
+  background: var(--gradient-background);
+  background-attachment: fixed;
+  min-height: 100vh;
   color: var(--color-text);
-  filter: grayscale(100%);
 }
 
 #root {
@@ -67,24 +74,56 @@ body {
   position: relative;
   perspective: 1000px;
   transform-style: preserve-3d;
+  background: var(--gradient-background);
+  background-attachment: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.page-container {
+  position: relative;
+  transform-style: preserve-3d;
+  width: 100%;
+  min-height: 100vh;
+  perspective: 2px;
+  z-index: 1;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.parallax-back {
+  transform: translateZ(-1px) scale(1.5);
+}
+
+.parallax-base {
+  transform: translateZ(0);
+}
+
+.parallax-front {
+  transform: translateZ(1px) scale(0.5);
 }
 
 .content-wrapper {
   position: relative;
   z-index: 1;
   padding: 2rem;
-  background: var(--glass-bg);
+  background: transparent;
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  box-shadow: 
-    8px 8px 16px var(--neumorph-shadow-dark),
-    -8px -8px 16px var(--neumorph-shadow-light);
-  border: 1px solid var(--glass-border);
+  border: none;
+  box-shadow: none;
   transition: transform 0.3s ease;
 }
 
 .content-wrapper:hover {
-  transform: translateY(-5px);
+  transform: none;
+  box-shadow: none;
 }
 
 .back-button {
@@ -92,7 +131,7 @@ body {
   bottom: 2rem;
   left: 2rem;
   padding: 0.5rem 1rem;
-  background: var(--glass-bg);
+  background: var(--gradient-glass);
   backdrop-filter: blur(5px);
   color: var(--navy);
   border: none;

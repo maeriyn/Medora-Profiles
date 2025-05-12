@@ -1,0 +1,30 @@
+.modality-page {
+  min-height: 100vh;
+  padding: 8rem 2rem 4rem;
+  background: transparent;
+}
+
+.modality-page .content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--overlay-dark);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.modality-page h1 {
+  color: #1E90FF;
+  margin-bottom: 2rem;
+  font-family: var(--font-primary);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.modality-page p {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
