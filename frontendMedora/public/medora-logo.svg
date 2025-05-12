@@ -1,0 +1,40 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.117647 0 0 0 0 0.564706 0 0 0 0 1 0 0 0 0.8 0"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dotted M shape -->
+  <g filter="url(#glow)">
+    <!-- Left line -->
+    <circle cx="12" cy="12" r="2" fill="#1E90FF"/>
+    <circle cx="12" cy="18" r="2" fill="#1E90FF"/>
+    <circle cx="12" cy="24" r="2" fill="#1E90FF"/>
+    <circle cx="12" cy="30" r="2" fill="#1E90FF"/>
+    <circle cx="12" cy="36" r="2" fill="#1E90FF"/>
+    
+    <!-- Middle-left diagonal -->
+    <circle cx="18" cy="18" r="2" fill="#1E90FF"/>
+    <circle cx="21" cy="24" r="2" fill="#1E90FF"/>
+    
+    <!-- Center point -->
+    <circle cx="24" cy="30" r="2" fill="#1E90FF"/>
+    
+    <!-- Middle-right diagonal -->
+    <circle cx="27" cy="24" r="2" fill="#1E90FF"/>
+    <circle cx="30" cy="18" r="2" fill="#1E90FF"/>
+    
+    <!-- Right line -->
+    <circle cx="36" cy="12" r="2" fill="#1E90FF"/>
+    <circle cx="36" cy="18" r="2" fill="#1E90FF"/>
+    <circle cx="36" cy="24" r="2" fill="#1E90FF"/>
+    <circle cx="36" cy="30" r="2" fill="#1E90FF"/>
+    <circle cx="36" cy="36" r="2" fill="#1E90FF"/>
+  </g>
+</svg>
