@@ -1,6 +1,8 @@
 import { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
+import Pricing from './Pricing'
+import ContactForm from './ContactForm'
 import './Home.css'
 
 const sections = [
@@ -67,7 +69,13 @@ const features = [
   }
 ]
 
-export default function Home() {
+interface HomeProps {
+  onPricingOpen: () => void;
+  onPricingClose: () => void;
+  isModalOpen: boolean;
+}
+
+export default function Home({ onPricingOpen, onPricingClose, isModalOpen }: HomeProps) {
   const navigate = useNavigate();
   const cyclingWords = [
     'Towns',
@@ -86,6 +94,19 @@ export default function Home() {
 
   const [scrollY, setScrollY] = useState(0)
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  const [showPricing, setShowPricing] = useState(false)
+  const [showContactForm, setShowContactForm] = useState(false)
+
+  const handleContactFormOpen = () => {
+    setShowContactForm(true)
+    onPricingOpen() // This will trigger the menu dimming
+  }
+
+  const handleContactFormClose = () => {
+    setShowContactForm(false)
+    onPricingClose() // This will restore the menu
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -128,6 +149,10 @@ export default function Home() {
     <div className="parallax-container">
       <motion.div 
         className="home"
+        style={{
+          filter: isModalOpen ? 'brightness(0.1)' : 'none',  // Decreased from 0.3 to 0.1
+          transition: 'filter 0.3s ease'
+        }}
       >
         <div className="content-wrapper">
           <div className="title-container" ref={titleContainerRef}>
@@ -154,8 +179,9 @@ export default function Home() {
             className="cta-button"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleContactFormOpen}
           >
-            Generate Now
+            Start Free Trial
           </motion.button>
 
           <motion.div 
@@ -184,6 +210,12 @@ export default function Home() {
           </motion.div>
         </div>
       </motion.div>
+      
+      {showContactForm && (
+        <ContactForm 
+          onClose={handleContactFormClose}
+        />
+      )}
 
       <div className="features-section">
         {features.map((feature, index) => (

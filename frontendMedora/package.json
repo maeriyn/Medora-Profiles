@@ -1,7 +1,8 @@
 {
-  "name": "frontendmedora",
+  "name": "medora-frontend",
   "private": true,
   "version": "0.0.0",
+  "description": "Frontend application for Medora Systems synthetic data generation platform",
   "type": "module",
   "scripts": {
     "dev": "vite",
