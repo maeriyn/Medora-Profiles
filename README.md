@@ -20,6 +20,24 @@ docker-compose -f .devcontainer/docker-compose.yml up -d
 
 The Synthea medical data generator is automatically set up and built during container creation. Generated data will be persisted in a Docker volume.
 
+## Demo Project
+
+Want to see how to use the Medora API? Check out our demo project in the `medora-demo/` directory. It's a complete example showing how to:
+
+- Generate synthetic medical data
+- Customize generation parameters
+- Handle batch data generation
+- Process and validate the generated data
+
+To run the demo:
+```bash
+cd medora-demo
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+Then open http://localhost:8000 in your browser to see the interactive demo.
+
 ## Tools
 
 ### Synthea Integration
