@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
 import Menu from './components/Menu'
 import Home from './components/Home'
 import Biography from './components/Biography'
@@ -13,18 +14,38 @@ import LegalModality from './components/modalities/Legal'
 import './App.css'
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleModalOpen = () => {
+    setIsModalOpen(true)
+    document.body.style.overflow = 'hidden'
+  }
+
+  const handleModalClose = () => {
+    setIsModalOpen(false)
+    document.body.style.overflow = 'auto'
+  }
+
   return (
     <Router>
       <div className="app">
-        <Menu />
+        <div>
+          <Menu isModalOpen={isModalOpen} />
+        </div>
         <AnimatePresence mode="wait">
           <div className="page-container">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={
+                <Home 
+                  onPricingOpen={() => handleModalOpen()}
+                  onPricingClose={() => handleModalClose()}
+                  isModalOpen={isModalOpen}
+                />
+              } />
               <Route 
                 path="/biography" 
                 element={
-                  <div className="parallax-container">
+                  <div>
                     <Biography />
                   </div>
                 } 
@@ -32,7 +53,7 @@ function App() {
               <Route 
                 path="/contact" 
                 element={
-                  <div className="parallax-container">
+                  <div>
                     <Contact />
                   </div>
                 } 
@@ -40,7 +61,7 @@ function App() {
               <Route 
                 path="/search" 
                 element={
-                  <div className="parallax-container">
+                  <div>
                     <NoResults />
                   </div>
                 } 
@@ -48,7 +69,7 @@ function App() {
               <Route 
                 path="/modalities" 
                 element={
-                  <div className="parallax-container">
+                  <div>
                     <Modalities />
                   </div>
                 } 
@@ -56,7 +77,7 @@ function App() {
               <Route 
                 path="/modalities/healthcare" 
                 element={
-                  <div className="parallax-container">
+                  <div>
                     <HealthcareModality />
                   </div>
                 } 
@@ -64,7 +85,7 @@ function App() {
               <Route 
                 path="/modalities/financial" 
                 element={
-                  <div className="parallax-container">
+                  <div>
                     <FinancialModality />
                   </div>
                 } 
@@ -72,7 +93,7 @@ function App() {
               <Route 
                 path="/modalities/educational" 
                 element={
-                  <div className="parallax-container">
+                  <div>
                     <EducationalModality />
                   </div>
                 } 
@@ -80,7 +101,7 @@ function App() {
               <Route 
                 path="/modalities/legal" 
                 element={
-                  <div className="parallax-container">
+                  <div>
                     <LegalModality />
                   </div>
                 } 

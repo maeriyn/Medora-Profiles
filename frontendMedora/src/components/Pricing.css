@@ -1,0 +1,131 @@
+.pricing-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);  /* Increased from 0.8 to 0.9 */
+  display: flex;
+  align-items: flex-start;  /* Changed from center to flex-start */
+  justify-content: center;
+  z-index: 10000;
+  overflow-y: auto;
+  padding: 0;  /* Remove vertical padding */
+}
+
+.pricing-overlay::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pricing-overlay::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.pricing-overlay::-webkit-scrollbar-thumb {
+  background: rgba(30, 144, 255, 0.5);
+  border-radius: 4px;
+}
+
+.pricing-modal {
+  background: var(--overlay-dark);
+  border-radius: 0 0 20px 20px;  /* Rounded corners only at bottom */
+  padding: 2rem;
+  width: 100%;  /* Full width */
+  max-width: 1200px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;  /* Remove top border */
+  position: relative;
+  margin: 0 auto;  /* Center horizontally */
+  transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: top;
+  max-height: none;
+  overflow-y: auto;
+}
+
+/* Add smooth scrollbar for the modal content */
+.pricing-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pricing-modal::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.pricing-modal::-webkit-scrollbar-thumb {
+  background: rgba(30, 144, 255, 0.5);
+  border-radius: 4px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.pricing-card h3 {
+  color: #1E90FF;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.pricing-features {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card ul {
+  flex-grow: 1;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.pricing-card li {
+  margin: 0.5rem 0;
+}
+
+.contact-button {
+  margin-top: auto;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.close-button {
+  background: transparent;
+  border: 1px solid #1E90FF;
+  color: #1E90FF;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.contact-button:hover,
+.close-button:hover {
+  transform: translateY(-2px);
+}

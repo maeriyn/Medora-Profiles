@@ -1,0 +1,30 @@
+.logo-link {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 1100;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.logo-link:hover {
+  opacity: 1;
+}
+
+.logo-image {
+  height: 2.5rem;
+  width: auto;
+  filter: drop-shadow(0 0 8px rgba(30, 144, 255, 0.3));
+}
+
+@media (max-width: 768px) {
+  .logo-link {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+  
+  .logo-image {
+    height: 2rem;
+  }
+}
