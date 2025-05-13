@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Simple demo script showcasing the Medora client for synthetic data generation.
+Simplified demo script showcasing the Medora client for generating highly detailed synthetic patient profiles.
 """
 
 import os
@@ -29,86 +29,55 @@ def main():
         print(f"Server status: {status}")
     except Exception as e:
         print(f"Error connecting to server: {e}")
-        print("Make sure the Medora API server is running and accessible.")
-        return
-    
-    # List available modules
+        print(f"Trying to continue anyway, but results may be limited...")
+        
+    # Generate a highly detailed patient profile from Seattle
+    print("\nGenerating highly detailed patient profile...")
     try:
-        modules = client.list_available_modules()
-        print(f"Available modules: {modules}")
-    except Exception as e:
-        print(f"Error fetching modules: {e}")
-    
-    print("\n1. Generating a simple dataset")
-    # Generate a basic dataset
-    try:
+        # Generate a single patient with comprehensive health history
         data = client.generate_medical_data(
-            num_records=3,
-            state="California",
+            num_records=1,
+            seed=42,  # Use fixed seed for reproducibility
+            state="Washington",
+            gender="F",  # Female patient
+            age_min=55,
+            age_max=65,  # Middle-aged to capture rich medical history
+            modules=[
+                "allergies",
+                "medications", 
+                "conditions",
+                "procedures",
+                "encounters",
+                "immunizations",
+                "observations",
+                "imaging_studies"
+            ],
             export_format="json"
         )
-        file_path = client.save_generated_data(
-            data, 
-            output_dir=output_path, 
-            filename="basic_dataset.json"
-        )
-        print(f"  ✓ Dataset saved to {file_path}")
+        
+        # Save the data
+        filename = "detailed_patient.json"
+        file_path = client.save_generated_data(data, output_dir=output_path, filename=filename)
+        print(f"✓ Generated highly detailed patient profile saved to: {file_path}")
+        
     except Exception as e:
-        print(f"  ✗ Error generating basic dataset: {e}")
-    
-    print("\n2. Generating dataset with age/gender filters")
-    # Generate a dataset with age and gender filters
-    try:
-        data = client.generate_medical_data(
-            num_records=3,
-            age_min=65,
-            age_max=85,
-            gender="F",
-            state="Florida",
-            export_format="json"
-        )
-        file_path = client.save_generated_data(
-            data, 
-            output_dir=output_path, 
-            filename="elderly_women.json"
-        )
-        print(f"  ✓ Dataset saved to {file_path}")
-    except Exception as e:
-        print(f"  ✗ Error generating filtered dataset: {e}")
-    
-    print("\n3. Generating multiple datasets in batch")
-    # Generate multiple datasets using batch processing
-    try:
-        configs = [
-            {
-                "num_records": 2,
-                "state": "New York",
-                "gender": "M",
-                "age_min": 25,
-                "age_max": 40
-            },
-            {
-                "num_records": 2,
-                "state": "Texas",
-                "gender": "F",
-                "age_min": 45,
-                "age_max": 60
-            }
-        ]
-        file_paths = client.generate_batch(configs, output_dir=output_path)
-        print(f"  ✓ Batch datasets saved to: {', '.join(file_paths)}")
-    except Exception as e:
-        print(f"  ✗ Error generating batch datasets: {e}")
-    
-    print("\n4. Generating predefined demo dataset")
-    # Generate a predefined demo dataset
-    try:
-        demo_files = client.generate_demo_dataset(output_dir=os.path.join(output_path, "demo"))
-        print(f"  ✓ Demo datasets generated:")
-        for name, path in demo_files.items():
-            print(f"    - {name}: {path}")
-    except Exception as e:
-        print(f"  ✗ Error generating demo dataset: {e}")
+        print(f"✗ Error generating detailed patient profile: {e}")
+        print("Attempting fallback with simplified options...")
+        
+        try:
+            # Try with minimal options
+            data = client.generate_medical_data(
+                num_records=1,
+                state="Washington",
+                export_format="json"
+            )
+            
+            # Save the data
+            filename = "simplified_patient.json"
+            file_path = client.save_generated_data(data, output_dir=output_path, filename=filename)
+            print(f"✓ Generated simplified patient profile saved to: {file_path}")
+        except Exception as e2:
+            print(f"✗ Fallback also failed: {e2}")
     
     print("\nDemo completed! Check the output directory for generated files.")
 

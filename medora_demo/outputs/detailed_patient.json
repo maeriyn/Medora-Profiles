@@ -1,0 +1,58 @@
+{
+  "patients": [
+    {
+      "id": "patient-1",
+      "name": "Test Patient 1",
+      "gender": "F",
+      "age": 30,
+      "birthDate": "1970-01-01",
+      "address": {
+        "line": [
+          "123 Main St"
+        ],
+        "city": "Seattle",
+        "state": "Washington",
+        "postalCode": "98101"
+      },
+      "conditions": [
+        {
+          "id": "condition-0-0",
+          "code": "C1",
+          "display": "Mock Condition 1",
+          "onset": "2022-01-01"
+        },
+        {
+          "id": "condition-0-1",
+          "code": "C2",
+          "display": "Mock Condition 2",
+          "onset": "2022-02-02"
+        },
+        {
+          "id": "condition-0-2",
+          "code": "C3",
+          "display": "Mock Condition 3",
+          "onset": "2022-03-03"
+        }
+      ],
+      "medications": [
+        {
+          "id": "med-0-0",
+          "code": "M1",
+          "display": "Mock Medication 1",
+          "dosage": "100mg daily"
+        },
+        {
+          "id": "med-0-1",
+          "code": "M2",
+          "display": "Mock Medication 2",
+          "dosage": "200mg daily"
+        }
+      ],
+      "allergies": [],
+      "encounters": [],
+      "procedures": [],
+      "observations": [],
+      "immunizations": []
+    }
+  ]
+}
