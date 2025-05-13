@@ -1,0 +1,1378 @@
+{
+  "patients": [
+    {
+      "id": "patient-1",
+      "resourceType": "Patient",
+      "gender": "male",
+      "birthDate": "1970-02-02",
+      "name": [
+        {
+          "given": [
+            "Test"
+          ],
+          "family": "Patient1"
+        }
+      ]
+    },
+    {
+      "id": "patient-2",
+      "resourceType": "Patient",
+      "gender": "female",
+      "birthDate": "1970-03-03",
+      "name": [
+        {
+          "given": [
+            "Test"
+          ],
+          "family": "Patient2"
+        }
+      ]
+    },
+    {
+      "id": "patient-3",
+      "resourceType": "Patient",
+      "gender": "male",
+      "birthDate": "1970-04-04",
+      "name": [
+        {
+          "given": [
+            "Test"
+          ],
+          "family": "Patient3"
+        }
+      ]
+    },
+    {
+      "id": "patient-4",
+      "resourceType": "Patient",
+      "gender": "female",
+      "birthDate": "1970-05-05",
+      "name": [
+        {
+          "given": [
+            "Test"
+          ],
+          "family": "Patient4"
+        }
+      ]
+    },
+    {
+      "id": "patient-5",
+      "resourceType": "Patient",
+      "gender": "male",
+      "birthDate": "1970-06-06",
+      "name": [
+        {
+          "given": [
+            "Test"
+          ],
+          "family": "Patient5"
+        }
+      ]
+    },
+    {
+      "id": "patient-6",
+      "resourceType": "Patient",
+      "gender": "female",
+      "birthDate": "1970-07-07",
+      "name": [
+        {
+          "given": [
+            "Test"
+          ],
+          "family": "Patient6"
+        }
+      ]
+    },
+    {
+      "id": "patient-7",
+      "resourceType": "Patient",
+      "gender": "male",
+      "birthDate": "1970-08-08",
+      "name": [
+        {
+          "given": [
+            "Test"
+          ],
+          "family": "Patient7"
+        }
+      ]
+    },
+    {
+      "id": "patient-8",
+      "resourceType": "Patient",
+      "gender": "female",
+      "birthDate": "1970-09-09",
+      "name": [
+        {
+          "given": [
+            "Test"
+          ],
+          "family": "Patient8"
+        }
+      ]
+    },
+    {
+      "id": "patient-9",
+      "resourceType": "Patient",
+      "gender": "male",
+      "birthDate": "1970-10-10",
+      "name": [
+        {
+          "given": [
+            "Test"
+          ],
+          "family": "Patient9"
+        }
+      ]
+    },
+    {
+      "id": "patient-10",
+      "resourceType": "Patient",
+      "gender": "female",
+      "birthDate": "1970-11-11",
+      "name": [
+        {
+          "given": [
+            "Test"
+          ],
+          "family": "Patient10"
+        }
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "id": "encounter-1",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-2"
+      }
+    },
+    {
+      "id": "encounter-2",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-3"
+      }
+    },
+    {
+      "id": "encounter-3",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-4"
+      }
+    },
+    {
+      "id": "encounter-4",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-5"
+      }
+    },
+    {
+      "id": "encounter-5",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-6"
+      }
+    },
+    {
+      "id": "encounter-6",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-7"
+      }
+    },
+    {
+      "id": "encounter-7",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-8"
+      }
+    },
+    {
+      "id": "encounter-8",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-9"
+      }
+    },
+    {
+      "id": "encounter-9",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-10"
+      }
+    },
+    {
+      "id": "encounter-10",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-1"
+      }
+    },
+    {
+      "id": "encounter-11",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-2"
+      }
+    },
+    {
+      "id": "encounter-12",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-3"
+      }
+    },
+    {
+      "id": "encounter-13",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-4"
+      }
+    },
+    {
+      "id": "encounter-14",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-5"
+      }
+    },
+    {
+      "id": "encounter-15",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-6"
+      }
+    },
+    {
+      "id": "encounter-16",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-7"
+      }
+    },
+    {
+      "id": "encounter-17",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-8"
+      }
+    },
+    {
+      "id": "encounter-18",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-9"
+      }
+    },
+    {
+      "id": "encounter-19",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-10"
+      }
+    },
+    {
+      "id": "encounter-20",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-1"
+      }
+    },
+    {
+      "id": "encounter-21",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-2"
+      }
+    },
+    {
+      "id": "encounter-22",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-3"
+      }
+    },
+    {
+      "id": "encounter-23",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-4"
+      }
+    },
+    {
+      "id": "encounter-24",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-5"
+      }
+    },
+    {
+      "id": "encounter-25",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-6"
+      }
+    },
+    {
+      "id": "encounter-26",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-7"
+      }
+    },
+    {
+      "id": "encounter-27",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-8"
+      }
+    },
+    {
+      "id": "encounter-28",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-9"
+      }
+    },
+    {
+      "id": "encounter-29",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-10"
+      }
+    },
+    {
+      "id": "encounter-30",
+      "resourceType": "Encounter",
+      "status": "finished",
+      "class": {
+        "code": "outpatient"
+      },
+      "type": [
+        {
+          "text": "Outpatient Visit"
+        }
+      ],
+      "subject": {
+        "reference": "Patient/patient-1"
+      }
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 121,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-2"
+      }
+    },
+    {
+      "id": "obs-2",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 122,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-3"
+      }
+    },
+    {
+      "id": "obs-3",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 123,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-4"
+      }
+    },
+    {
+      "id": "obs-4",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 124,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-5"
+      }
+    },
+    {
+      "id": "obs-5",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 125,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-6"
+      }
+    },
+    {
+      "id": "obs-6",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 126,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-7"
+      }
+    },
+    {
+      "id": "obs-7",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 127,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-8"
+      }
+    },
+    {
+      "id": "obs-8",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 128,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-9"
+      }
+    },
+    {
+      "id": "obs-9",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 129,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-10"
+      }
+    },
+    {
+      "id": "obs-10",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 130,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-1"
+      }
+    },
+    {
+      "id": "obs-11",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 131,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-2"
+      }
+    },
+    {
+      "id": "obs-12",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 132,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-3"
+      }
+    },
+    {
+      "id": "obs-13",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 133,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-4"
+      }
+    },
+    {
+      "id": "obs-14",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 134,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-5"
+      }
+    },
+    {
+      "id": "obs-15",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 135,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-6"
+      }
+    },
+    {
+      "id": "obs-16",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 136,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-7"
+      }
+    },
+    {
+      "id": "obs-17",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 137,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-8"
+      }
+    },
+    {
+      "id": "obs-18",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 138,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-9"
+      }
+    },
+    {
+      "id": "obs-19",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 139,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-10"
+      }
+    },
+    {
+      "id": "obs-20",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 140,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-1"
+      }
+    },
+    {
+      "id": "obs-21",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 141,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-2"
+      }
+    },
+    {
+      "id": "obs-22",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 142,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-3"
+      }
+    },
+    {
+      "id": "obs-23",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 143,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-4"
+      }
+    },
+    {
+      "id": "obs-24",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 144,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-5"
+      }
+    },
+    {
+      "id": "obs-25",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 145,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-6"
+      }
+    },
+    {
+      "id": "obs-26",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 146,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-7"
+      }
+    },
+    {
+      "id": "obs-27",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 147,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-8"
+      }
+    },
+    {
+      "id": "obs-28",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 148,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-9"
+      }
+    },
+    {
+      "id": "obs-29",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 149,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-10"
+      }
+    },
+    {
+      "id": "obs-30",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 150,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-1"
+      }
+    },
+    {
+      "id": "obs-31",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 151,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-2"
+      }
+    },
+    {
+      "id": "obs-32",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 152,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-3"
+      }
+    },
+    {
+      "id": "obs-33",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 153,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-4"
+      }
+    },
+    {
+      "id": "obs-34",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 154,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-5"
+      }
+    },
+    {
+      "id": "obs-35",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 155,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-6"
+      }
+    },
+    {
+      "id": "obs-36",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 156,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-7"
+      }
+    },
+    {
+      "id": "obs-37",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 157,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-8"
+      }
+    },
+    {
+      "id": "obs-38",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 158,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-9"
+      }
+    },
+    {
+      "id": "obs-39",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 159,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-10"
+      }
+    },
+    {
+      "id": "obs-40",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 120,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-1"
+      }
+    },
+    {
+      "id": "obs-41",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 121,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-2"
+      }
+    },
+    {
+      "id": "obs-42",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 122,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-3"
+      }
+    },
+    {
+      "id": "obs-43",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 123,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-4"
+      }
+    },
+    {
+      "id": "obs-44",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 124,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-5"
+      }
+    },
+    {
+      "id": "obs-45",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 125,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-6"
+      }
+    },
+    {
+      "id": "obs-46",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 126,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-7"
+      }
+    },
+    {
+      "id": "obs-47",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 127,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-8"
+      }
+    },
+    {
+      "id": "obs-48",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 128,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-9"
+      }
+    },
+    {
+      "id": "obs-49",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 129,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-10"
+      }
+    },
+    {
+      "id": "obs-50",
+      "resourceType": "Observation",
+      "status": "final",
+      "code": {
+        "text": "Blood Pressure"
+      },
+      "valueQuantity": {
+        "value": 130,
+        "unit": "mmHg"
+      },
+      "subject": {
+        "reference": "Patient/patient-1"
+      }
+    }
+  ]
+}

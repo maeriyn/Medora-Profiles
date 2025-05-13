@@ -1,2 +1,2 @@
-medora-client
+-e ../medora_client
 requests
