@@ -19,9 +19,9 @@ app = FastAPI(
     title="Synthea API",
     description="API for generating synthetic medical records using Synthea",
     version="1.0.0",
-    docs_url="/api/v1/docs",
-    redoc_url="/api/v1/redoc",
-    openapi_url="/api/v1/openapi.json"
+    docs_url="/v1/docs",
+    redoc_url="/v1/redoc",
+    openapi_url="/v1/openapi.json"
 )
 
 class SyntheaConfig(BaseModel):
@@ -29,11 +29,11 @@ class SyntheaConfig(BaseModel):
     population: Optional[dict] = None
     modules: Optional[List[str]] = None
 
-@app.get("/api/v1/", tags=["root"])
+@app.get("/v1/", tags=["root"])
 async def root():
     return {"message": "Welcome to the Synthea API"}
 
-@app.post("/api/v1/generate", tags=["generation"])
+@app.post("/v1/generate", tags=["generation"])
 async def generate_data(config: SyntheaConfig):
     try:
         synthea_path = os.path.join("app", "services", "medical", "synthea")
@@ -74,23 +74,33 @@ async def generate_data(config: SyntheaConfig):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.get("/api/v1/status", tags=["status"])
+@app.get("/v1/status", tags=["status"])
 async def get_status():
     return {"status": "running"}
 
-@app.get("/api/v1/test", tags=["test"])
+@app.get("/v1/test", tags=["test"])
 async def test():
     return {"message": "Test endpoint is working"}
+
+@app.get("/health", tags=["status"])
+async def health_check():
+    """Endpoint for basic health check"""
+    return {"status": "healthy"}
+
+@app.get("/domains", tags=["info"])
+async def list_domains():
+    """List available data domains/modules"""
+    return {"domains": ["diabetes", "hypertension", "heart_disease"]}
 
 if __name__ == "__main__":
     import uvicorn
     print("Starting API server at http://0.0.0.0:8000")
     print("Available endpoints:")
-    print("  - GET /api/v1/")
-    print("  - GET /api/v1/test")
-    print("  - GET /api/v1/status") 
-    print("  - POST /api/v1/generate")
-    print("  - GET /api/v1/redoc (Redoc UI)")
+    print("  - GET /v1/")
+    print("  - GET /v1/test")
+    print("  - GET /v1/status") 
+    print("  - POST /v1/generate")
+    print("  - GET /v1/redoc (Redoc UI)")
     
     uvicorn.run(
         app,

@@ -42,7 +42,7 @@ class MedoraClient:
         Returns:
             Dictionary containing generated medical data
         """
-        endpoint = f"{self.base_url}/generate/medical"
+        endpoint = f"{self.base_url}/api/v1/generate"
         
         payload = {
             "num_records": num_records,
@@ -91,7 +91,7 @@ class MedoraClient:
     
     def list_available_modules(self) -> List[str]:
         """Get list of available Synthea modules"""
-        endpoint = f"{self.base_url}/domains"
+        endpoint = f"{self.base_url}/api/v1/domains"
         response = requests.get(endpoint)
         response.raise_for_status()
         return response.json()["domains"]
@@ -126,7 +126,7 @@ class MedoraClient:
         Returns:
             Dictionary containing server status information
         """
-        endpoint = f"{self.base_url}/health"
+        endpoint = f"{self.base_url}/api/v1/status"
         response = requests.get(endpoint)
         response.raise_for_status()
         return response.json()

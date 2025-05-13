@@ -30,11 +30,9 @@ COPY requirements.txt /workspace/requirements.txt
 RUN pip install -r requirements.txt
 
 # Install frontend dependencies
-COPY frontend/package*.json /workspace/frontend/
 WORKDIR /workspace/frontend
-RUN npm install
-
-# Return to main workspace
+COPY frontend/package*.json ./
+RUN npm install || echo "Frontend dependencies will be installed via volume mount"
 WORKDIR /workspace
 
 # Clone and build Synthea
