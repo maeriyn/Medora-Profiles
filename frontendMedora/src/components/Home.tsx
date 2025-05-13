@@ -1,7 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import Pricing from './Pricing'
 import ContactForm from './ContactForm'
 import './Home.css'
 
@@ -95,7 +94,6 @@ export default function Home({ onPricingOpen, onPricingClose, isModalOpen }: Hom
   const [scrollY, setScrollY] = useState(0)
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([])
 
-  const [showPricing, setShowPricing] = useState(false)
   const [showContactForm, setShowContactForm] = useState(false)
 
   const handleContactFormOpen = () => {
@@ -236,7 +234,6 @@ export default function Home({ onPricingOpen, onPricingClose, isModalOpen }: Hom
       </div>
 
       {sections.map((section, index) => {
-        const yOffset = (scrollY * section.depth) % window.innerHeight
         const slideX = Math.min(0, (scrollY - (index * window.innerHeight * 0.8)) * 0.5)
         const translateZ = section.translateZ * (1 + scrollY * 0.0005)
         
